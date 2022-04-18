@@ -4,18 +4,16 @@ $(document).ready(function() {
 	  	const data = {};
 	  	formData.forEach((value, key) => (data[key] = value));
 	  	console.log(JSON.stringify(data));
-		$.ajax({
+		$.ajax("https://85ox413pdj.execute-api.us-east-1.amazonaws.com/authenticate", {
 			type: "POST",
-			url: "https://85ox413pdj.execute-api.us-east-1.amazonaws.com/authenticate",
 			data: JSON.stringify(data),
-			success: function (data) {
-			  console.log(data);
-			},
-			error: function(xhr,status,error) {
-				console.log(error);
-				$("#errormsg").text(error);
-				$("#errormsg").show();
-			}
+		})
+		.done(function (data, textStatus, jqXHR) {
+		    	console.log(data);
+		})
+		.fail(function (jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR);
+			console.log(textStatus);
 		});
 		event.preventDefault();
 	});
