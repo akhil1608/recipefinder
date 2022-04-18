@@ -3,7 +3,7 @@ $(document).ready(function() {
 		formData = "{\"username\": \"" + $("#username").val() + "\", \"password\": \"" + $("#password").val() + "\"}";
 		console.log(formData);
 		$.ajax("https://85ox413pdj.execute-api.us-east-1.amazonaws.com/authenticate", {
-			type: "POST",
+			type: "GET",
 			data: formData
 		})
 		.done(function (data, textStatus, jqXHR) {
