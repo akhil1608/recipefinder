@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$("#loginform").on("submit", function() {
-		formData = "{\"username\": \"" + $("#username").val() + "\", \"password\": \"" + $("#password").val() + "\"}";
+		formData = { "username": '"'+$("#username").val()+"'", "password": '"'+$("#password").val()+'"' };
 		console.log(formData);
 		$.ajax("https://85ox413pdj.execute-api.us-east-1.amazonaws.com/authenticate", {
 			type: "GET",
