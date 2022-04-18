@@ -1,4 +1,5 @@
 $(document).load(function() {
+	console.log(document.cookie);
 	if (document.cookie.includes("username"))
 		$(location).attr("href", "https://akhil1608.github.io/recipefinder");
 });
