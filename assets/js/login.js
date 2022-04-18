@@ -9,13 +9,14 @@ $(document).ready(function() {
 			url: "https://85ox413pdj.execute-api.us-east-1.amazonaws.com/authenticate",
 			data: JSON.stringify(data),
 			success: function (data) {
-			  $("#errormsg").text(data);
+			  console.log(data);
 			},
 			error: function(xhr,status,error) {
+				console.log(error);
 				$("#errormsg").text(error);
+				$("#errormsg").show();
 			}
 		});
-		$("#errormsg").show();
 		event.preventDefault();
 	});
 });
