@@ -4,7 +4,8 @@ $(document).ready(function() {
 		console.log(formData);
 		$.ajax("https://85ox413pdj.execute-api.us-east-1.amazonaws.com/authenticate", {
 			type: "GET",
-			data: formData
+			data: formData,
+			dataType: "json"
 		})
 		.done(function (data, textStatus, jqXHR) {
 		    	console.log(data);
