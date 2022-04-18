@@ -6,14 +6,13 @@ $(document).ready(function() {
 	  	console.log(JSON.stringify(data));
 		$.ajax("https://85ox413pdj.execute-api.us-east-1.amazonaws.com/authenticate", {
 			type: "POST",
-			data: JSON.stringify(data),
+			data: data,
 		})
 		.done(function (data, textStatus, jqXHR) {
 		    	console.log(data);
 		})
 		.fail(function (jqXHR, textStatus, errorThrown) {
-			console.log(jqXHR);
-			console.log(textStatus);
+			console.log(jqXHR.responseText);
 		});
 		event.preventDefault();
 	});
