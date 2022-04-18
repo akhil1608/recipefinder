@@ -8,10 +8,16 @@ $(document).ready(function() {
 			dataType: "json"
 		})
 		.done(function (data, textStatus, jqXHR) {
-		    	console.log(data);
+			if (data.Count == 1)
+				$(location).attr("href", "https://google.com");
+			else {
+				$("errormsg").text("Invalid username/password.");
+				$("errormsg").show();
+			}
 		})
 		.fail(function (jqXHR, textStatus, errorThrown) {
-			console.log(jqXHR.responseText);
+			$("errormsg").text("Server error. Try again later.");
+			$("errormsg").show();
 		});
 		event.preventDefault();
 	});
