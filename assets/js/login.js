@@ -1,15 +1,15 @@
 $(document).ready(function() {
 	$("#loginform").on("submit", function() {
 		const formData = new FormData(event.target);
-	  const data = {};
-	  formData.forEach((value, key) => (data[key] = value));
-	  console.log(JSON.stringify(data));
+	  	const data = {};
+	  	formData.forEach((value, key) => (data[key] = value));
+	  	console.log(JSON.stringify(data));
 		$.ajax({
 			type: "POST",
-			url: "post.php",
+			url: "https://85ox413pdj.execute-api.us-east-1.amazonaws.com/authenticate",
 			data: JSON.stringify(data),
 			success: function (data) {
-			  $("#errormsg").text("success");
+			  $("#errormsg").text(data);
 			},
 			error: function(xhr,status,error) {
 				$("#errormsg").text(error);
