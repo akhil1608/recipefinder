@@ -1,3 +1,7 @@
+$(document).load(function() {
+	if (document.cookie.includes("username"))
+		$(location).attr("href", "https://akhil1608.github.io/recipefinder");
+});
 $(document).ready(function() {
 	$("#loginform").on("submit", function() {
 		$("#errormsg").hide();
@@ -24,3 +28,4 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 });
+// document.cookie = "username=;expires=" + new Date(0).toUTCString()
